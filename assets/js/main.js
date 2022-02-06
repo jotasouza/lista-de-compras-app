@@ -24,7 +24,7 @@ const createItem = (itemList, itemIndex) => {
     inputButton.value            = 'X'
     inputButton.dataset.index    = `${itemIndex}`
    
-    div.innerText                = `${itemList}`
+    div.innerText                = ` ${itemList}`
 
     item.classList.add('todo__item')
     item.appendChild(inputCheckbox)
