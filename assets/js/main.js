@@ -75,7 +75,6 @@ const deleteItem = (indexElement) => {
    const dataBase = getDataBase()
    dataBase.splice(indexElement, 1)
    setDataBase(dataBase)
-   render()
 }
 
 //FUNÇÃO QUE ALTERA O STATUS DO ITEM
