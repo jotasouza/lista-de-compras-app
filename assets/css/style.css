@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #F4CE01;
-    --secondary-color: #0F0F0B;
+    --primary-color: #ffc52c;
+    --secondary-color: #2b222c;
 }
 
 * {
@@ -35,7 +35,7 @@ body {
     align-items: center;
     margin-top: 50px;
     box-shadow: 1px 1px 5px var(--secondary-color);
-    font-size: 3rem;
+    font-size: 2rem;
     color: var(--primary-color);
 }
 
@@ -54,6 +54,7 @@ body {
     align-items: center;
     padding: 5px;
     box-shadow: 1px 1px 5px var(--secondary-color);
+    font-size: 1.7rem;
 }
 .todo__item > div {
     width: 80%;
@@ -69,7 +70,7 @@ body {
 .todo__item > input[type='text'] {
     border: none;
     width: 80%;
-    font: inherit;
+    font: inherit;    
 }
 
 .todo__item > input[type='button'],
@@ -77,6 +78,7 @@ body {
     width: 30px;
     height: 30px;
     font: inherit;
+    font-size: 1rem;
 }
 
 
@@ -107,4 +109,5 @@ body {
 .todo__new-item > input::placeholder {
     font-style: italic;
     font-weight: normal;
+    font-size: 1.8rem;
 }
