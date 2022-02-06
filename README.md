@@ -12,6 +12,6 @@ To-Do Lists são listas de todas as tarefas que você precisa realizar, ou seja,
 
 ![Lista de Compras](https://www.maozinhanacozinha.com.br/wp-content/uploads/2020/04/Lista-compras-400x280.jpg)
 
-Ao manter uma lista de compras, você se certifica de que todos os produtos que necessita comprar, estão todas em um só lugar e assim você não se esquecerá de nada importante. 
+Ao manter uma lista de compras, você se certifica de que todos os produtos que necessita comprar, estão em um só lugar e assim você não se esquecerá de nada importante. 
 
 Quando você usa as listas de forma eficaz, melhora muito a sua organização e, consequentemente, ficará muito mais confortável. Poderá desfrutar de mais tranquilidade, afinal de contas, você não vai se esquecer de nada importante.
