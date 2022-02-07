@@ -1,4 +1,8 @@
-//let dataBase = []
+/**
+ * @Author Jonatas Souza da Silva
+ * @Reviewer Weriks
+ * @Year 2022
+ */
 
 const getDataBase = () => JSON.parse(localStorage.getItem('todoList')) ?? []
 const setDataBase = (dataBase) => localStorage.setItem('todoList', JSON.stringify(dataBase))
@@ -10,7 +14,8 @@ button.addEventListener('click', function(){
 })
 
 //FUNÇÃO QUE CRIA OS ELEMENTOS
-const createItem = (itemList, itemIndex) => {
+const createItem = (itemDB, itemIndex) => {
+    
     const item          = document.createElement('label')
     const inputCheckbox = document.createElement('input')
     const div           = document.createElement('div')
@@ -19,12 +24,16 @@ const createItem = (itemList, itemIndex) => {
   
     inputCheckbox.type           = 'checkbox' 
     inputCheckbox.dataset.index  = `${itemIndex}`
+
+    
+    inputCheckbox.checked        = itemDB.checked || false
      
     inputButton.type             = 'button'
     inputButton.value            = 'X'
     inputButton.dataset.index    = `${itemIndex}`
    
-    div.innerText                = ` ${itemList}`
+   
+    div.innerText                = ` ${itemDB.itemList}`
 
     item.classList.add('todo__item')
     item.appendChild(inputCheckbox)
@@ -46,8 +55,7 @@ const cleanList = () => {
 const render    = () => {
    cleanList()
    const dataBase = getDataBase()
-
-   dataBase.forEach((item, index)=> createItem(item.itemList, index))
+   dataBase.forEach((itemDB, index)=> createItem(itemDB, index))
 }
 
 //FUNÇÃO QUE ADICIONA UM NOVO ITEM A LISTA
@@ -55,7 +63,7 @@ const addItem   = (event) => {
     const key   = event.key
     if(key === 'Enter'){
         const dataBase = getDataBase()
-        dataBase.push({'itemList': `${inputItem.value}`, 'status': ''})
+        dataBase.push({'itemList': `${inputItem.value}`, 'checked': inputItem.checked})
         setDataBase(dataBase)
         render()
         cleanInputItem()
@@ -81,7 +89,7 @@ const deleteItem = (indexElement) => {
 //FUNÇÃO QUE ALTERA O STATUS DO ITEM
 const alterStatusItem = (indexElement) => {
     const dataBase = getDataBase()
-    dataBase[indexElement].itemStatus =  dataBase[indexElement].itemStatus === '' ? 'checked' : ''
+    dataBase[indexElement].checked = !dataBase[indexElement].checked 
     setDataBase(dataBase)
     render()
 }
@@ -93,7 +101,7 @@ const clickItem   = (event) => {
 
     if(element.type === 'button'){
         deleteItem(index)
-    }else if(element.type === 'checked'){
+    }else if(element.type === 'checkbox'){
         alterStatusItem(index)
     }
 }
